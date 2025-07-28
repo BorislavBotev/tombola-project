@@ -4,7 +4,7 @@
 ## Description
 The project represents a REST API which creates and manages a Tombola game.
 It consists of Players which we can create, get and asign to a tombola, Awards which we
-can create and asign to Tombola, and the Tombola Game itself - which we can create, play it out and give awards to players that got lucky.
+can create and assign to Tombola, and the Tombola Game itself - which we can create, play it out and give awards to players that got lucky.
 
 ## Project setup
 To run the program you need to do the follow steps :
@@ -23,10 +23,10 @@ To run the program you need to do the follow steps :
 
 
 ## Database
-You dont need to run any scripts manually since it is used liquibase.
-On the first launch of the app the scripts will automatically be ran and the DB will be created.
+You dont need to run any scripts manually since liquibase is used.
+On the first launch of the app the scripts will automatically be run and the DB will be created.
 
-If you want to connect to the DB within Workbench -
+If you want to connect to the DB within Workbench for better visibility-
 
 Port -3306
 
@@ -37,7 +37,7 @@ Password - mypass
 ## Testing the app
 You can test the app by calling the endpoints.
 This can be done by opening your swagger url : http://localhost:8080/swagger-ui/index.html.
-To test any of the endpoint you will need an oauth2 token. The credentials are as follows 
+To test any of the endpoints you will need an oauth2 token. The credentials for it are as follows 
 
 clientID - admin 
 
