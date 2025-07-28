@@ -7,7 +7,7 @@ import java.util.Optional;
  * Enum respective to the winners strategies
  */
 public enum WinnersSelection {
-    BASIC(1),
+    RANDOM(1),
     WEIGHTED(2);
 
     private final int id;
@@ -19,6 +19,6 @@ public enum WinnersSelection {
     public static WinnersSelection getWinnersSelectionBasedOnID(int id) {
         Optional<WinnersSelection> result = Arrays.stream(WinnersSelection.values()).filter(
                 selection -> selection.id == id).findFirst();
-        return result.orElse(BASIC);
+        return result.orElse(RANDOM);
     }
 }

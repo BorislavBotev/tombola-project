@@ -44,7 +44,7 @@ public class TombolaGameplayController {
     @PatchMapping("/{tombolaID}/awards")
     public ResponseEntity<TombolaResponseDTO> assignReward(@Valid @NotNull @RequestBody IDRequestDTO idRequestDTO, @PathVariable("tombolaID") String tombolaUUID)
             throws AwardNotFoundException, TombolaNotFoundException, AwardCapacityException, AwardAvailabilityException {
-        TombolaResponseDTO responseDTO = tombolaGameplayFacade.assignReward(tombolaUUID, idRequestDTO);
+        TombolaResponseDTO responseDTO = tombolaGameplayFacade.assignAward(tombolaUUID, idRequestDTO);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
@@ -78,7 +78,7 @@ public class TombolaGameplayController {
      */
     @PatchMapping("/{tombolaID}/play")
     public ResponseEntity<TombolaWinnersDTO> playTombola(@Valid @NotNull @RequestBody WinnersSelectionIDDTO idDTO, @PathVariable("tombolaID") String tombolaUUID)
-            throws GameErrorException, PrerequisitesException, TombolaNotFoundException, GameStateException {
+            throws GameErrorException, PrerequisitesException, TombolaNotFoundException, GameStateException, WinnersSelectionException {
         TombolaWinnersDTO winners = tombolaGameplayFacade.play(tombolaUUID, idDTO);
         return new ResponseEntity<>(winners, HttpStatus.OK);
     }
