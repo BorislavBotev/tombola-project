@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.CONFLICT, DUPLICATE_ENTRY_ALREADY_EXIST);
     }
 
-    @ExceptionHandler({GameStateException.class, AwardAvailabilityException.class})
+    @ExceptionHandler({GameStateException.class, AwardAvailabilityException.class, WinnersSelectionException.class})
     public ResponseEntity<Map<String, Object>> handleGameStateException(Exception ex) {
         return buildResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
 
