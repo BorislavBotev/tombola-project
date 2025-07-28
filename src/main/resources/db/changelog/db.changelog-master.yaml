@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      contextFilter: local
+      file: classpath:/db/changelog/changes/common/001-initial_db_structure.sql
